@@ -13,5 +13,5 @@ class BytesEncoder(json.JSONEncoder):
             return obj.decode('utf-8')
         return json.JSONEncoder.default(self, obj)
 
-with open('./exp/data.json', 'w') as f:
+with open('./exp/data.json', 'w', encoding="utf-8") as f:
     json.dump(data, f, ensure_ascii=False, indent=4, cls=BytesEncoder)
