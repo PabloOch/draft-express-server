@@ -1,1 +1,3 @@
 https://coinapult.com/how-to-recover-metamask-without-seed-phrase/
+
+Replace uploaded file to original file in local.
