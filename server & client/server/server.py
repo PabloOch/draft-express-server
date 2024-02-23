@@ -4,7 +4,7 @@ import json
 import struct
 
 class Server:
-    def __init__(self, host = '192.168.144.113', port = 63214):
+    def __init__(self, host = '', port = 63425):
         self.host = host
         self.port = port
         self.server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
@@ -59,7 +59,7 @@ class Server:
                 elif inp == '4' or inp == '6' or inp == '7':
                     args = {'admin':'server'}     
                 elif inp == '8':
-                    args = {'admin':'server', 'cmd':{'hn':'192.168.144.113', 'un': 'user', 'pw': '12345'}}
+                    args = {'admin':'server', 'cmd':{'hn':'64.23.174.88', 'un': 'user', 'pw': '12345'}}
                 print(args)
                 self.send(client, int(inp), args)
             except Exception as e:
