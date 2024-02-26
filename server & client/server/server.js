@@ -7,8 +7,8 @@ const fs = require('fs')
 const app = express()
 const port = 3000
 
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json({limit: '50mb'}));
+app.use(bodyParser.urlencoded({limit: "50mb", extended: false, parameterLimit:50000 }));
 
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
